@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_simple_nf_ch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Simple notification"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_action_nf_ch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Action notification"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_remote_input_nf_ch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Remote input notification"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_big_picture_style_nf_ch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Big picture style notification_ch"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_big_text_style_nf_ch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Big text style notification"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_inbox_style_nf_ch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Inbox style notification"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_media_style_nf_ch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Media style notification"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_messaging_style_nf_ch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Messaging style notification"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_progress_nf_ch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Progress notification"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_custom_heads_up_nf_ch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Custom heads up notification"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_custom_nf_ch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Custom view notification"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_clear_all_nf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clear all notification"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+</ScrollView>
