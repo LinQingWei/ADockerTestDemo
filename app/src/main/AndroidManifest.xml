@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.adocker.test">
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -11,7 +12,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -75,13 +77,13 @@
         </receiver>
 
         <provider
-            android:authorities="${applicationId}.demo.contentprovider"
             android:name=".components.contentprovider.DemoContentProvider"
+            android:authorities="${applicationId}.demo.contentprovider"
             android:exported="true" />
 
         <service
             android:name=".components.job.DemoJobService"
-            android:permission="android.permission.BIND_JOB_SERVICE"/>
+            android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
 </manifest>
