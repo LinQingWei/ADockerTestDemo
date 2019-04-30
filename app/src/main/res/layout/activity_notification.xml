@@ -33,7 +33,7 @@
             android:id="@+id/btn_big_picture_style_nf_ch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Big picture style notification_ch"
+            android:text="Big picture style notification"
             android:textAllCaps="false" />
 
         <Button
