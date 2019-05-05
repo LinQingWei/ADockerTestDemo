@@ -114,7 +114,7 @@ public class NotificationTestActivity extends AppCompatActivity implements View.
             case R.id.btn_progress_nf_ch:
                 notificationUtil.sendNotificationChannel(this, "Progress Notification",
                         "Demo for progress notification", true, true,
-                        NotificationUtil.NOTIFICATION_REMOTE_INPUT, NotificationChannels.DEFAULT, mNotificationManager);
+                        NotificationUtil.NOTIFICATION_PROGRESS, NotificationChannels.DEFAULT, mNotificationManager);
                 break;
             case R.id.btn_custom_heads_up_nf_ch:
                 notificationUtil.sendNotificationChannel(this, "Custom Heads Up Notification",
