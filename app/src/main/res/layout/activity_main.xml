@@ -71,6 +71,13 @@
             android:gravity="center"
             android:text="JOB TEST" />
 
+        <Button
+            android:id="@+id/btn_account_manage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/account_manage" />
+
     </LinearLayout>
 
 </ScrollView>

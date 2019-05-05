@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.adocker.test.account.AccountManagerActivity;
 import com.adocker.test.components.activity.DemoActivity;
 import com.adocker.test.components.contentprovider.DemoContentProvider;
 import com.adocker.test.components.dialog.AlertDialogSamples;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mDialogTestBtn;
     private Button mNFTestBtn;
     private Button mJobServiceTestBtn;
+    private Button mAccountManageTestBtn;
 
 
     @Override
@@ -71,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mNFTestBtn.setOnClickListener(this);
         mJobServiceTestBtn = (Button) findViewById(R.id.btn_job_test);
         mJobServiceTestBtn.setOnClickListener(this);
+        mAccountManageTestBtn = findViewById(R.id.btn_account_manage);
+        mAccountManageTestBtn.setOnClickListener(this);
 
         //static broadcast test
         IntentFilter intentFilter = new IntentFilter("com.adocker.test.DYNAMIC_RECEIVER");
@@ -129,6 +133,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     startJobServiceTest();
                 }
+                break;
+            case R.id.btn_account_manage:
+                AccountManagerActivity.start(this);
                 break;
             default:
                 break;
