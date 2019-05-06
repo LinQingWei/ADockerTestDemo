@@ -89,4 +89,8 @@
     <string name="channel_default">Default events</string>
     <string name="channel_low">Low events</string>
     <string name="channel_media">Media events</string>
+
+    <string name="account_manage">Account Manage</string>
+    <string name="sign_up">Create new account</string>
+    <string name="sign_in">Log in</string>
 </resources>

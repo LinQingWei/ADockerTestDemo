@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.adocker.test">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.adocker.test"
+    android:sharedUserId="com.adocker.test">
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+
+    <!-- client -->
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+
+    <!-- Authenticator -->
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +21,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +31,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".components.activity.DemoActivity" />
+        <activity android:name=".components.activity.DemoActivity">
+            <intent-filter>
+                <action android:name="${applicationId}.DEMO_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".components.activity.ResolverActivityOne"
@@ -65,7 +81,11 @@
             android:name=".components.notification.LaunchActivity"
             android:label="LaunchActivity" />
 
-        <service android:name=".components.service.DemoService" />
+        <service android:name=".components.service.DemoService">
+            <intent-filter>
+                <action android:name="${applicationId}.DEMO_SERVICE" />
+            </intent-filter>
+        </service>
 
         <receiver android:name=".components.broadcast.DemoBroadcastReceiver">
             <intent-filter>
@@ -75,13 +95,45 @@
         </receiver>
 
         <provider
-            android:authorities="${applicationId}.demo.contentprovider"
             android:name=".components.contentprovider.DemoContentProvider"
-            android:exported="true" />
+            android:authorities="${applicationId}.demo.contentprovider"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="${applicationId}.DEMO_PROVIDER" />
+            </intent-filter>
+        </provider>
+
+        <provider
+            android:name=".components.contentprovider.DemoMultiContentProvider"
+            android:authorities="${applicationId}.demo.multicontentprovider"
+            android:exported="true"
+            android:process=":mp" />
 
         <service
             android:name=".components.job.DemoJobService"
-            android:permission="android.permission.BIND_JOB_SERVICE"/>
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity
+            android:name=".account.AccountManagerActivity"
+            android:label="@string/account_manage" />
+
+        <activity
+            android:name=".account.authenticator.AuthenticatorActivity"
+            android:label="@string/sign_in" />
+
+        <activity
+            android:name=".account.authenticator.SignUpActivity"
+            android:label="@string/sign_up" />
+
+        <service android:name=".account.authenticator.AuthenticatorService">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/test_authenticator" />
+        </service>
+
     </application>
 
 </manifest>
