@@ -105,7 +105,23 @@ public class NotificationUtil {
                 builder.setStyle(inboxStyle);
                 break;
             case NOTIFICATION_MEDIA_STYLE:
-                // NotificationCompat have no media style.
+                androidx.media.app.NotificationCompat.MediaStyle mediaStyle = new androidx.media.app.NotificationCompat.MediaStyle();
+                PendingIntent pendingIntent = PendingIntent.getService(context,0, new Intent(),
+                        PendingIntent.FLAG_UPDATE_CURRENT);
+                NotificationCompat.Action playOrPauseAction = new NotificationCompat.Action.Builder(
+                        R.mipmap.ic_play, "PLAY", pendingIntent)
+                        .build();
+                NotificationCompat.Action nextAction = new NotificationCompat.Action.Builder(
+                        R.mipmap.ic_next, "Next", pendingIntent)
+                        .build();
+                NotificationCompat.Action deleteAction = new NotificationCompat.Action.Builder(
+                        R.mipmap.ic_delete, "Delete", pendingIntent)
+                        .build();
+                builder.addAction(playOrPauseAction)
+                        .addAction(nextAction)
+                        .addAction(deleteAction)
+                        .setOngoing(true)
+                        .setStyle(mediaStyle);
                 break;
             case NOTIFICATION_MESSAGING_STYLE:
                 NotificationCompat.MessagingStyle messagingStyle = new NotificationCompat.MessagingStyle("peter")

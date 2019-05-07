@@ -104,7 +104,9 @@ public class NotificationTestActivity extends AppCompatActivity implements View.
                         NotificationUtil.NOTIFICATION_INBOX_STYLE, NotificationChannels.DEFAULT, mNotificationManager);
                 break;
             case R.id.btn_media_style_nf_ch:
-                // NotificationCompat have no media style.
+                notificationUtil.sendNotificationChannel(this, "Media Notification",
+                        "Demo for media notification", true, true,
+                        NotificationUtil.NOTIFICATION_MEDIA_STYLE, NotificationChannels.DEFAULT, mNotificationManager);
                 break;
             case R.id.btn_messaging_style_nf_ch:
                 notificationUtil.sendNotificationChannel(this, "Message Notification",
