@@ -93,4 +93,8 @@
     <string name="account_manage">Account Manage</string>
     <string name="sign_up">Create new account</string>
     <string name="sign_in">Log in</string>
+
+    <string name="shortcut">Shortcut Manage</string>
+    <string name="add_new_website">Add New Website</string>
+    <string name="add_new_website_short">Add Website</string>
 </resources>

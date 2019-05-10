@@ -24,6 +24,7 @@ import com.adocker.test.components.dialog.AlertDialogSamples;
 import com.adocker.test.components.job.DemoJobService;
 import com.adocker.test.components.notification.NotificationTestActivity;
 import com.adocker.test.components.service.ServiceTestActivity;
+import com.adocker.test.shortcut.ShortcutActivity;
 import com.adocker.test.utils.LogUtil;
 
 import java.util.concurrent.TimeUnit;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mNFTestBtn;
     private Button mJobServiceTestBtn;
     private Button mAccountManageTestBtn;
+    private Button mShortcutTestBtn;
 
 
     @Override
@@ -75,6 +77,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mJobServiceTestBtn.setOnClickListener(this);
         mAccountManageTestBtn = findViewById(R.id.btn_account_manage);
         mAccountManageTestBtn.setOnClickListener(this);
+        mShortcutTestBtn = findViewById(R.id.btn_shortcut);
+        if (ShortcutActivity.shouldDisableSelf(this)) {
+            mShortcutTestBtn.setEnabled(false);
+        } else {
+            mShortcutTestBtn.setOnClickListener(this);
+        }
 
         //static broadcast test
         IntentFilter intentFilter = new IntentFilter("com.adocker.test.DYNAMIC_RECEIVER");
@@ -136,6 +144,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_account_manage:
                 AccountManagerActivity.start(this);
+                break;
+            case R.id.btn_shortcut:
+                ShortcutActivity.start(this);
                 break;
             default:
                 break;

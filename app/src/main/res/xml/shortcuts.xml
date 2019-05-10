@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:icon="@drawable/add"
+        android:shortcutId="add_website"
+        android:shortcutLongLabel="@string/add_new_website"
+        android:shortcutShortLabel="@string/add_new_website_short">
+        <intent
+            android:action="com.adocker.test.intent.action.ADD_WEBSITE"
+            android:targetClass="com.adocker.test.shortcut.ShortcutActivity"
+            android:targetPackage="com.adocker.test" />
+    </shortcut>
+</shortcuts>
